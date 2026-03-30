@@ -33,11 +33,53 @@ kubeadm join 172.16.62.129:6443 --token erowi7.ttm6qzm6b0zerm3t \
 	--discovery-token-ca-cert-hash sha256:c58a5551595e5907671ffae81fbf1a05501256aa74f02fed2a2c44be7a81cd1b
 ```
 
+---
+
+### Note:
+### My Laptop Can't Stand with this 2 Ubuntu VMs
+### MY Laptop is Crashing Everytime because my Hard is HDD and 8 GRAMs
+
+---
+
 ### Step 2: Using kubectl run the following deployment on the cluster
 
-My Laptop Can't Stand with this 2 Ubuntu VMs
+```bash
+nano nginx-deployment.yaml
+```
 
-MY Laptop is Crashing Everytime
+write this inside the yaml file:
+
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  labels:
+    app: nginx
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.14.2
+        ports:
+        - containerPort: 80
+```
+
+save and run:
+
+```bash
+kubectl apply -f nginx-deployment.yaml
+```
+
+---
 
 ### Bonus: using k3s redo the whole lab to install one server and one agent node and make sure that nodes are up and running
 

@@ -90,14 +90,6 @@ curl -sfL https://get.k3s.io | sh -
 ```
 
 ![Step 3](images/05.png)
-
-```bash
-mkdir -p ~/.kube
-sudo cp /etc/rancher/k3s/k3s.yaml ~/.kube/config
-sudo chown $(whoami):$(whoami) ~/.kube/config
-
-export KUBECONFIG=$HOME/.kube/config
-```
 ![Step 3](images/06.png)
 
 get Token from Master:

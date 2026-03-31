@@ -96,7 +96,7 @@ spec:
         image: nginx:alpine
         env:
         - name: FOO
-          value: "ITI"xt
+          value: "ITI"
 ```
 
 ![Step 3](images/07.png)

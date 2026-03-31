@@ -67,11 +67,13 @@ kubectl hostnames
 - Create a deployment YAML file that has 3 replicas of image ```nginx:alpine```.
 - The pods inside the deployments must have env ```FOO=ITI```.
 
+
 ```bash
+kubectl create deployment nginx --image=nginx:alpine --dry-run=client -o yaml
 nano nginx-deployment.yaml
 ```
 
-add This in the YAML file:
+Edit the YAML file:
 
 ```
 apiVersion: apps/v1

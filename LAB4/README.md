@@ -120,7 +120,6 @@ kubectl apply -f deployment.yaml
 Test mounted content:
 ![Step 1](images/04.png)
 
-
 ### Step 2: downward api:
 
 - Create a downward pv that uses the podIP and podName
@@ -133,7 +132,7 @@ nano pv.yaml
 
 Edit the file:
 ```
-apiVersion: v1![Step 1](images/05.png)
+apiVersion: v1
 
 kind: PersistentVolume
 metadata:
